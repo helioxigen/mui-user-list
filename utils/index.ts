@@ -1,0 +1,1 @@
+export { stringAvatar } from "./stringAvatar";
