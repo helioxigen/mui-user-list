@@ -6,10 +6,10 @@ import createCache from "@emotion/cache";
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#556cd6",
+      main: "#30E9CA",
     },
     secondary: {
-      main: "#19857b",
+      main: "#A31CD9",
     },
     error: {
       main: red.A400,

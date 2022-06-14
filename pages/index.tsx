@@ -17,13 +17,22 @@ import { stringAvatar } from "@utils";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import { UserList } from "@components/UserList";
+import { SearchInput } from "@components/Form/SearchInput";
+import { FloatingBar } from "@components/UI/FloatingBar";
 // import { Container } from "@mui/system";
 
 export default function Home({ users }: { users: User[] }) {
   return (
-    <Container>
-      <Box sx={{ maxWidth: 450, margin: "0 auto" }}></Box>
-    </Container>
+    <>
+      <FloatingBar>
+        <SearchInput label="Search contacts" />
+      </FloatingBar>
+      <Typography variant="h2" component="h1" textAlign="left" gutterBottom>
+        ADDRESS <br /> BOOK
+      </Typography>
+      <UserList users={users} />
+    </>
   );
 }
 
