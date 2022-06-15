@@ -29,7 +29,7 @@ interface UserCardProps {
 }
 
 export const UserCard: React.FC<UserCardProps> = ({ user }) => {
-  const { geo, ...address } = user?.address;
+  const { geo, ...address } = user.address;
 
   return (
     <Card sx={{ minWidth: 320 }} elevation={12}>
