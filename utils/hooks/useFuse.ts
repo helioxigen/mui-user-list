@@ -6,7 +6,7 @@ export const useFuse = <T>(
   initialValue: string = "",
   options?: Fuse.IFuseOptions<T>
 ): [T[], string, (value: string) => void] => {
-  const [value, setValue] = useState<string>(initialValue);
+  const [value, setValue] = useState<string>(() => initialValue);
 
   const fuse = useMemo(() => {
     return new Fuse(list, options);
