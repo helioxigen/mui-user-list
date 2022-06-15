@@ -36,6 +36,8 @@ jobs:
             ${{ runner.OS }}-
 
       - name: Build
+        env:
+          GMAPS_API_KEY: ${{ secrets.GMAPS_API_KEY }}
         run: |
           npm i
           npm run build
