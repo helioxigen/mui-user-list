@@ -32,7 +32,7 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
   const { geo, ...address } = user?.address;
 
   return (
-    <Card sx={{ minWidth: 320 }} elevation={24}>
+    <Card sx={{ minWidth: 320 }} elevation={12}>
       <CardHeader
         avatar={user?.name && <AvatarString name={user?.name} />}
         action={

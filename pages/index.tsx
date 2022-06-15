@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { useFuse } from "utils/hooks/useFuse";
 import { Layout } from "@components/UI/Layout";
 import { UserCard } from "@components/User/UserCard";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home({ users }: { users: User[] }) {
   const {
@@ -36,20 +37,30 @@ export default function Home({ users }: { users: User[] }) {
       </Typography>
       <Stack sx={{ position: "relative" }}>
         <UserList users={list} />
-        {currentUser && (
+        {/* {currentUser && ( */}
+        <Box sx={{ position: "absolute", height: "100%", ml: 6, left: "100%" }}>
           <Box
-            sx={{ position: "absolute", height: "100%", ml: 6, left: "100%" }}
+            sx={{
+              position: "sticky",
+              top: 30,
+            }}
           >
-            <Box
-              sx={{
-                position: "sticky",
-                top: 30,
-              }}
-            >
-              <UserCard user={currentUser} />
-            </Box>
+            <AnimatePresence>
+              {currentUser && (
+                <motion.div
+                  key={currentUser.id}
+                  initial={{ opacity: 0, x: 200 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 200 }}
+                  style={{ position: "absolute", top: 0 }}
+                >
+                  <UserCard user={currentUser} />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </Box>
-        )}
+        </Box>
+        {/* )} */}
       </Stack>
     </Layout>
   );
