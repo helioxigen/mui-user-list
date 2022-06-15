@@ -33,7 +33,7 @@ export const UserList: React.FC<UserListProps> = ({ users }) => {
               <Link scroll={false} href={`/contact/${user.id}`}>
                 <ListItemButton
                   component="a"
-                  selected={(id as string) == user.id}
+                  selected={parseInt(id as string) === user.id}
                 >
                   <ListItemAvatar>
                     <AvatarString name={user.name} />
