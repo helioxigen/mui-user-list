@@ -71,7 +71,7 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
           <Typography>Location</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          {address && <DataDisplay data={address} />}
+          {address && <DataDisplay data={address as any} />}
           {geo && <Map center={objParse(geo, parseFloat)} zoom={8} />}
         </AccordionDetails>
       </Accordion>
