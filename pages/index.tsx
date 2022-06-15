@@ -12,10 +12,10 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function Home({ users }: { users: User[] }) {
   const {
-    query: { search, id },
+    query: { id },
   } = useRouter();
 
-  const [list, searchValue, onSearchChange] = useFuse(users, search as string, {
+  const [list, searchValue, onSearchChange] = useFuse(users, "", {
     keys: ["name", "company.name"],
   });
 

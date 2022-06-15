@@ -26,7 +26,6 @@ export const SearchInput: React.FC<SearchInputProps> = ({
     target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
     onChange(value);
-    replace({ search: value ? `search=${value}` : "" });
   };
 
   return (
