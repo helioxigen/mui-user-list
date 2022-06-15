@@ -19,14 +19,14 @@ export const SearchInput: React.FC<SearchInputProps> = ({
 }) => {
   const {
     query: { search },
-    push,
+    replace,
   } = useRouter();
 
   const handleChange = ({
     target: { value },
   }: React.ChangeEvent<HTMLInputElement>) => {
     onChange(value);
-    push({ search: value ? `search=${value}` : "" });
+    replace({ search: value ? `search=${value}` : "" });
   };
 
   return (
