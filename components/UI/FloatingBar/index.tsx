@@ -1,4 +1,4 @@
-import { AppBar, Paper, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Paper, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { ElevationScroll } from "./ElevationScroll";
 
@@ -11,7 +11,7 @@ export const FloatingBar: React.FC<FloatingBarProps> = ({ children }) => {
     // <ElevationScroll elevations={[5, 7]}>
     <AppBar
       position="sticky"
-      sx={{ mb: 4, mt: 8 }}
+      sx={{ mb: 4, top: 20, mt: 20 }}
       square={false}
       elevation={6}
     >
