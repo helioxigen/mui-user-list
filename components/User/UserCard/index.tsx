@@ -26,9 +26,13 @@ import Link from "next/link";
 
 interface UserCardProps {
   user: User;
+  defaultExpanded?: boolean;
 }
 
-export const UserCard: React.FC<UserCardProps> = ({ user }) => {
+export const UserCard: React.FC<UserCardProps> = ({
+  user,
+  defaultExpanded = false,
+}) => {
   const { geo, ...address } = user.address;
 
   return (
@@ -62,7 +66,7 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
           Open website
         </Button>
       </CardActions>
-      <Accordion>
+      <Accordion expanded={defaultExpanded || undefined}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"

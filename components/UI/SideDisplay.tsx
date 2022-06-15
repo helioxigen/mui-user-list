@@ -49,7 +49,7 @@ export const SideDisplay: React.FC<SideDisplayProps> = ({ children, user }) => {
       onClose={() => router.push("/")}
       onOpen={() => null}
     >
-      {user && <UserCard user={user} />}
+      {user && <UserCard defaultExpanded user={user} />}
     </SwipeableDrawer>
   );
 };
