@@ -8,10 +8,9 @@ import React from "react";
 
 interface SideDisplayProps {
   user?: User;
-  children?: React.ReactNode;
 }
 
-export const SideDisplay: React.FC<SideDisplayProps> = ({ children, user }) => {
+export const SideDisplay: React.FC<SideDisplayProps> = ({ user }) => {
   const router = useRouter();
 
   const bigScreen = useMediaQuery(theme.breakpoints.up("lg"));

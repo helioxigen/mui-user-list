@@ -1,10 +1,6 @@
-import React, { useEffect } from "react";
-// import SearchIcon from "@me"
-import { Divider, IconButton, InputBase, Paper } from "@mui/material";
+import React from "react";
+import { IconButton, InputBase, Paper } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-import MenuIcon from "@mui/icons-material/Menu";
-import DirectionsIcon from "@mui/icons-material/Directions";
-import { useRouter } from "next/router";
 
 interface SearchInputProps {
   label?: string;
@@ -17,17 +13,6 @@ export const SearchInput: React.FC<SearchInputProps> = ({
   value,
   onChange,
 }) => {
-  const {
-    query: { search },
-    replace,
-  } = useRouter();
-
-  const handleChange = ({
-    target: { value },
-  }: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(value);
-  };
-
   return (
     <Paper
       component="form"
@@ -41,7 +26,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({
         placeholder={label}
         inputProps={{ "aria-label": "search" }}
         value={value}
-        onChange={handleChange}
+        onChange={(e) => onChange(e.target.value)}
       />
     </Paper>
   );

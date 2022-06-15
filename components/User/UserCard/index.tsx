@@ -10,14 +10,10 @@ import {
   CardContent,
   CardHeader,
   IconButton,
-  List,
   Typography,
 } from "@mui/material";
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import PhoneIcon from "@mui/icons-material/Phone";
-import LanguageIcon from "@mui/icons-material/Language";
-import { Entry } from "@components/UI/Profile/Entry";
 import { DataDisplay } from "@components/UI/Profile/DataDisplay";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Map } from "@components/Map";
