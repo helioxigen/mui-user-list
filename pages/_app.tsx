@@ -5,7 +5,6 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
 import theme, { createEmotionCache } from "@theme";
-import { Layout } from "@components/UI/Layout";
 import { Wrapper } from "@googlemaps/react-wrapper";
 
 // Client-side cache, shared for the whole session of the user in the browser.

@@ -37,7 +37,6 @@ export default function Home({ users }: { users: User[] }) {
       </Typography>
       <Stack sx={{ position: "relative" }}>
         <UserList users={list} />
-        {/* {currentUser && ( */}
         <Box sx={{ position: "absolute", height: "100%", ml: 6, left: "100%" }}>
           <Box
             sx={{
